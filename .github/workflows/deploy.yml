@@ -28,15 +28,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-```
 
-4. Click **Commit changes**
-
----
-
-### Step 4: Wait & Get Your Link
-
-1. Click **Actions** tab - wait for green checkmark (2-3 mins)
-2. Your live site will be at:
-```
-https://vineeshareddyy.github.io/vineesha-portfolio/
