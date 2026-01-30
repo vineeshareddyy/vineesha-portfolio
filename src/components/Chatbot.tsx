@@ -98,54 +98,100 @@ CERTIFICATIONS
   // Helper: Extract section by keyword
   // ----------------------------------------------------------
   const extractSection = (keyword: string) => {
-    const lower = keyword.toLowerCase();
+  const lower = keyword.toLowerCase();
 
-    if (lower.includes("skill"))
-      return RESUME_DATA.match(/SKILLS([\s\S]*?)────────────────────────────/)?.[1] || "No skills found.";
+  // ----------------------------------------------------------
+  // SPECIFIC PROJECT SEARCHES
+  // ----------------------------------------------------------
+  if (lower.includes("edubot") || lower.includes("student assistant") || lower.includes("chatbot project")) {
+    return `📚 **Edubot – AI-Powered Student Assistant**
+- React.js + FastAPI chatbot for student queries
+- SBERT + FAISS semantic search
+- Multilingual support (English, Telugu, Hindi)`;
+  }
 
-    if (lower.includes("project"))
-      return RESUME_DATA.match(/PROJECTS([\s\S]*?)────────────────────────────/)?.[1] || "No projects found.";
+  if (lower.includes("hemohub") || lower.includes("blood") || lower.includes("inventory")) {
+    return `🩸 **HemoHub – Blood Inventory Optimizer**
+- Django + SQLite blood bank management
+- Celery, Redis, Django Channels for real-time alerts
+- Automated expiry tracking`;
+  }
 
-    if (lower.includes("experience") || lower.includes("work") || lower.includes("intern"))
-      return RESUME_DATA.match(/EXPERIENCE([\s\S]*?)────────────────────────────/)?.[1] || "No experience found.";
+  if (lower.includes("speech emotion") || lower.includes("emotion detection") || lower.includes("emotion recognition")) {
+    return `🎤 **Speech Emotion Detection**
+- LSTM model with TensorFlow, Keras
+- MFCC features via Librosa
+- Flask web deployment`;
+  }
 
-    if (lower.includes("education") || lower.includes("college") || lower.includes("degree"))
-      return RESUME_DATA.match(/EDUCATION([\s\S]*?)────────────────────────────/)?.[1] || "No education found.";
+  // ALL PROJECTS (only when asking generally)
+  if (lower.includes("project") || lower.includes("built") || lower.includes("developed") || lower.includes("portfolio work")) {
+    return `Here are Vineesha's projects:
 
-    if (lower.includes("summary") || lower.includes("about") || lower.includes("who"))
-      return RESUME_DATA.match(/SUMMARY([\s\S]*?)────────────────────────────/)?.[1] || "No summary found.";
+📚 **1. Edubot – AI-Powered Student Assistant**
+- React.js + FastAPI chatbot for student queries
+- SBERT + FAISS semantic search
+- Multilingual support (English, Telugu, Hindi)
 
-    if (lower.includes("certif"))
-      return RESUME_DATA.match(/CERTIFICATIONS([\s\S]*)/)?.[1] || "No certifications found.";
+🩸 **2. HemoHub – Blood Inventory Optimizer**
+- Django + SQLite blood bank management
+- Celery, Redis, Django Channels for real-time alerts
+- Automated expiry tracking
 
-    // Contact information
-    if (lower.includes("contact") || lower.includes("reach"))
-      return "📧 Email: vineeshachinthakuntla@gmail.com\n📱 Phone: +91 7075026667\n📍 Location: Hyderabad, Telangana, India";
+🎤 **3. Speech Emotion Detection**
+- LSTM model with TensorFlow, Keras
+- MFCC features via Librosa
+- Flask web deployment
 
-    if (lower.includes("email") || lower.includes("mail"))
-      return "📧 vineeshachinthakuntla@gmail.com";
+💡 Ask me about any specific project for more details!`;
+  }
 
-    if (lower.includes("phone") || lower.includes("number") || lower.includes("mobile"))
-      return "📱 +91 7075026667";
+  // ----------------------------------------------------------
+  // OTHER SECTIONS 
+  // ----------------------------------------------------------
+  if (lower.includes("skill"))
+    return RESUME_DATA.match(/SKILLS([\s\S]*?)────────────────────────────/)?.[1] || "No skills found.";
 
-    if (lower.includes("linkedin"))
-      return "🔗 LinkedIn: linkedin.com/in/chinthakuntla-vineesha";
+  if (lower.includes("experience") || lower.includes("work") || lower.includes("intern"))
+    return RESUME_DATA.match(/EXPERIENCE([\s\S]*?)────────────────────────────/)?.[1] || "No experience found.";
 
-    if (lower.includes("github") || lower.includes("git"))
-      return "💻 GitHub: github.com/vineeshareddyy";
+  if (lower.includes("education") || lower.includes("college") || lower.includes("degree"))
+    return RESUME_DATA.match(/EDUCATION([\s\S]*?)────────────────────────────/)?.[1] || "No education found.";
 
-    if (lower.includes("location") || lower.includes("city") || lower.includes("where"))
-      return "📍 Hyderabad, Telangana, India";
+  if (lower.includes("summary") || lower.includes("about") || lower.includes("who"))
+    return RESUME_DATA.match(/SUMMARY([\s\S]*?)────────────────────────────/)?.[1] || "No summary found.";
 
-    if (lower.includes("name"))
-      return "👩‍💻 Chinthakuntla Vineesha";
+  if (lower.includes("certif"))
+    return RESUME_DATA.match(/CERTIFICATIONS([\s\S]*)/)?.[1] || "No certifications found.";
 
-    if (lower.includes("role") || lower.includes("position") || lower.includes("job") || lower.includes("title"))
-      return "💼 Software Engineering Fresher | AI Developer Intern at Lanciere Technologies";
+  // Contact information
+  if (lower.includes("contact") || lower.includes("reach"))
+    return "📧 Email: vineeshachinthakuntla@gmail.com\n📱 Phone: +91 7075026667\n📍 Location: Hyderabad, Telangana, India";
 
-    return "This information is not available in Vineesha's profile. Try asking about: skills, projects, experience, education, contact, email, linkedin, github, or certifications.";
-  };
+  if (lower.includes("email") || lower.includes("mail"))
+    return "📧 vineeshachinthakuntla@gmail.com";
 
+  if (lower.includes("phone") || lower.includes("number") || lower.includes("mobile"))
+    return "📱 +91 7075026667";
+
+  if (lower.includes("linkedin"))
+    return "🔗 LinkedIn: linkedin.com/in/chinthakuntla-vineesha";
+
+  if (lower.includes("github") || lower.includes("git"))
+    return "💻 GitHub: github.com/vineeshareddyy";
+
+  if (lower.includes("location") || lower.includes("city") || lower.includes("where"))
+    return "📍 Hyderabad, Telangana, India";
+
+  if (lower.includes("name"))
+    return "👩‍💻 Chinthakuntla Vineesha";
+
+  if (lower.includes("role") || lower.includes("position") || lower.includes("job") || lower.includes("title"))
+    return "💼 Software Engineering Fresher | AI Developer Intern at Lanciere Technologies";
+
+  return "I couldn't find that information. Try asking about: skills, projects (Edubot, HemoHub, Speech Emotion), experience, education, contact, or certifications.";
+};
+  
   // ----------------------------------------------------------
   // SMART GREETING ENGINE
   // ----------------------------------------------------------
