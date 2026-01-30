@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { Mail, MapPin, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,14 +12,47 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "0377dc9d-6a52-47e2-8de8-49e1cc9abc46", // ← Replace this!
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Portfolio Contact from ${formData.name}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message Sent! ✅",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error ❌",
+        description: "Failed to send message. Please try again or email directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -29,7 +62,6 @@ const Contact = () => {
       value: "vineeshachinthakuntla@gmail.com",
       href: "mailto:vineeshachinthakuntla@gmail.com",
     },
-
     {
       icon: MapPin,
       label: "Location",
@@ -73,7 +105,7 @@ const Contact = () => {
                       <div>
                         <p className="text-sm text-muted-foreground">{info.label}</p>
                         {info.href ? (
-                          <a
+                          
                             href={info.href}
                             target={info.href.startsWith("http") ? "_blank" : undefined}
                             rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
@@ -125,8 +157,8 @@ const Contact = () => {
                   className="bg-secondary/50 border-border resize-none"
                 />
               </div>
-              <Button type="submit" className="w-full hover-glow" size="lg">
-                Send Message
+              <Button type="submit" className="w-full hover-glow" size="lg" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
