@@ -31,12 +31,14 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#contact">
-                <Button size="lg" className="hover-glow">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Contact Me
-                </Button>
-              </a>
+              <Button 
+                size="lg" 
+                className="hover-glow"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Mail className="mr-2 h-5 w-5" />
+                Contact Me
+              </Button>
               <a href={`${import.meta.env.BASE_URL}Vineesha_Resume.pdf`} download="Vineesha_Chinthakuntla_Resume.pdf">
                 <Button size="lg" variant="secondary">
                   <Download className="mr-2 h-5 w-5" />
