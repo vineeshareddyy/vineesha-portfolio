@@ -303,7 +303,7 @@ CERTIFICATIONS
             {messages.map((m, i) => (
               <div key={i} className={`mb-3 flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
-                  className={`px-4 py-2 rounded-xl ${
+                  className={`px-4 py-2 rounded-xl whitespace-pre-line ${
                     m.role === "user"
                       ? "bg-primary text-primary-foreground"
                       : "bg-secondary text-secondary-foreground"
