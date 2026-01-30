@@ -105,7 +105,7 @@ const Contact = () => {
                       <div>
                         <p className="text-sm text-muted-foreground">{info.label}</p>
                         {info.href ? (
-                          
+                          <a
                             href={info.href}
                             target={info.href.startsWith("http") ? "_blank" : undefined}
                             rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
