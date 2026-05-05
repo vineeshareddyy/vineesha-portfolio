@@ -1,4 +1,4 @@
-import { GraduationCap, MapPin } from "lucide-react";
+import { GraduationCap, MapPin, Briefcase } from "lucide-react";
 
 const About = () => {
   return (
@@ -13,16 +13,35 @@ const About = () => {
           <div className="glass-card p-8 rounded-2xl hover-glow transition-all">
             <h3 className="text-2xl font-bold mb-4">Bio</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Software Engineering fresher with strong fundamentals in Python, backend development, 
-              databases, and web technologies. Currently working as an AI Developer Intern at 
-              Lanciere Technologies, gaining hands-on experience building production-ready AI 
-              applications including RAG-based chatbots, voice detection systems, face authentication, 
-              and emotion detection models. Passionate about creating scalable solutions and 
-              continuously learning new technologies.
+              Early-career AI engineer at Lanciere Technologies, where I build production
+              LLM systems on iMentora — an AI-powered learning assessment platform combining
+              real-time voice pipelines, biometric authentication, and multi-module evaluation
+              workflows. I work across the stack with FastAPI, MongoDB, OpenAI GPT-4, LangChain,
+              Whisper (via Groq), Edge TTS, SpeechBrain, and YOLOv8 — containerized with Docker.
+              Interested in the messy real-time engineering work that turns AI research into
+              products people actually use.
             </p>
           </div>
 
           <div className="space-y-6">
+            <div className="glass-card p-8 rounded-2xl hover-glow transition-all">
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Current Role</h3>
+                  <p className="text-foreground font-medium">
+                    Associate Engineer
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    Lanciere Technologies Pvt. Ltd.
+                  </p>
+                  <p className="text-muted-foreground text-sm">Aug 2025 – Present</p>
+                </div>
+              </div>
+            </div>
+
             <div className="glass-card p-8 rounded-2xl hover-glow transition-all">
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
@@ -36,7 +55,7 @@ const About = () => {
                   <p className="text-muted-foreground text-sm">
                     Maturi Venkata Subba Rao Engineering College
                   </p>
-                  <p className="text-muted-foreground text-sm">2025 • CGPA: 8.88/10</p>
+                  <p className="text-muted-foreground text-sm">May 2025 • CGPA: 8.88/10</p>
                 </div>
               </div>
             </div>
