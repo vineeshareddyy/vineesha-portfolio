@@ -1,66 +1,46 @@
-import { Code2, Brain, Eye, Database, Cloud, Globe } from "lucide-react";
+import { Code2, Brain, Database, Cloud, Globe, Layout } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
     {
       icon: Code2,
-      title: "Programming",
-      skills: ["Python", "C", "SQL"],
+      title: "Programming Languages",
+      skills: ["Python", "JavaScript", "SQL"],
     },
     {
       icon: Globe,
       title: "Backend Frameworks",
-      skills: [
-        "Django",
-        "Flask",
-        "FastAPI",
-        "REST APIs",
-      ],
+      skills: ["FastAPI", "Django", "Django REST Framework", "Flask"],
     },
     {
-      icon: Brain,
-      title: "AI/ML Frameworks",
-      skills: [
-        "TensorFlow",
-        "PyTorch",
-        "Keras",
-        "Scikit-learn",
-        "OpenCV",
-        "LangChain",
-        "Hugging Face",
-      ],
+      icon: Layout,
+      title: "Frontend",
+      skills: ["React.js", "HTML5", "CSS3", "Bootstrap"],
     },
     {
       icon: Database,
-      title: "Databases & Tools",
-      skills: [
-        "MySQL",
-        "SQLite",
-        "FAISS",
-        "Celery",
-        "Redis",
-        "Django Channels",
-      ],
-    },
-    {
-      icon: Globe,
-      title: "Frontend & Web",
-      skills: ["HTML", "CSS", "Bootstrap", "React.js"],
-    },
-    {
-      icon: Cloud,
-      title: "Tools & Technologies",
-      skills: ["Git", "GitHub", "Librosa", "gTTS", "Deep Translator"],
+      title: "Databases",
+      skills: ["MySQL", "MongoDB", "SQLite", "Redis"],
     },
     {
       icon: Brain,
-      title: "AI Specializations",
-      skills: ["RAG Pipelines", "Semantic Search", "SBERT", "Embeddings", "Speech Emotion Detection"],
+      title: "AI / ML Frameworks",
+      skills: [
+        "LangChain",
+        "Hugging Face Transformers",
+        "PyTorch",
+        "TensorFlow",
+        "Keras",
+        "scikit-learn",
+        "OpenCV",
+        "SBERT",
+        "FAISS",
+      ],
     },
     {
-      icon: Eye,
-      title: "Computer Vision",
-      skills: ["Face Authentication", "Image Processing", "Real-time Detection"],
+      icon: Cloud,
+      title: "Tools & Platforms",
+      skills: ["Git", "GitHub", "VS Code", "Linux"],
     },
   ];
 
