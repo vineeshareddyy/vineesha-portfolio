@@ -21,13 +21,13 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground">
-              Software Engineering Fresher | AI Developer Intern
+              AI Engineer @ Lanciere Technologies
             </p>
             
             <p className="text-lg text-muted-foreground max-w-xl">
-              Python | Backend Development | Web Applications | AI & ML
-              Building production-ready AI applications including RAG chatbots, 
-              voice detection, and emotion detection systems.
+              Building production LLM systems — RAG pipelines, real-time voice interaction,
+              biometric authentication, and FastAPI microservices. Currently shipping iMentora,
+              an AI-powered learning assessment platform.
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
