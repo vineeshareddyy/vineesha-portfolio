@@ -17,9 +17,8 @@ const About = () => {
               LLM systems on iMentora — an AI-powered learning assessment platform combining
               real-time voice pipelines, biometric authentication, and multi-module evaluation
               workflows. I work across the stack with FastAPI, MongoDB, OpenAI GPT-4, LangChain,
-              Whisper (via Groq), Edge TTS, SpeechBrain, and YOLOv8 — containerized with Docker.
-              Interested in the messy real-time engineering work that turns AI research into
-              products people actually use.
+              Whisper (via Groq), Edge TTS, SpeechBrain etc.Interested in building practical AI
+              systems that people can use.
             </p>
           </div>
 
